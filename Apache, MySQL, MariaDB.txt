@@ -1,0 +1,36 @@
+Require all granted
+
+set password for root@localhost = password('tOehdn1214');
+quit
+
+set password for root@localhost = password('tOehdn1214');
+create database UNIRAIL_database default CHARSET=utf8 collate=utf8_general_ci;
+create user shadow98a identified by 'tOehdn1214';
+grant all privileges on UNIRAIL_database.* to 'shadow98a'@'localhost' identified by 'tOehdn1214';
+quit
+
+show databases;
+use UNIRAIL_database;
+create table problem
+(
+	id bigint(20) unsigned not null auto_increment,
+	object varchar(255) not null,
+	time time not null,
+	problem varchar(255) not null,
+	primary key (id)
+)
+DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+show tables;
+insert into problem(object, time, problem) values('기흥', '2020-01-08 10:52.0000', '에스컬레이터 개길어여');
+insert into problem(object, time, problem) values('왕십리', '2020-01-08 10:52.0000', '사람 개많아여');
+insert into problem(object, time, problem) values('유니레일', '2020-01-08 10:52.0000', '개발자형 존잘이에여');
+select * from problem;
+truncate problem;
+select * from problem;
+quit
+
+
+
+
+
+
